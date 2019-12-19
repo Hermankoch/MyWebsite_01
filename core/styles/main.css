@@ -1,0 +1,241 @@
+*,
+*::after,
+*::before   {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/*  font-family: 'McLaren', cursive;
+    font-family: 'Roboto Slab', serif;
+    font-family: 'PT Serif', serif;
+
+
+*/
+
+html, body {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  background-color: rgb(50, 50, 50);
+  color: #fff;
+  font-family: 'Roboto Slab', serif;
+}
+
+.pageWrapper {
+width: 100vw;
+height: 100vh;
+background-image: linear-gradient(to right top, rgb(19, 148, 156) 10%, rgb(21, 166, 92));
+
+position: relative;
+}
+.pageContent {
+width: 80%;
+height: 80%;
+background-color: rgb(50, 50, 50);
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+border-radius: 1.5rem;
+box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, .7);
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-rows: 33.33% 33.33% 33.33%;
+grid-template-areas: 'main main secondary secondary'
+                     'main main hero hero'
+                     'bottom bottom hero hero';
+}
+
+.headerPrimary {
+  grid-area: main;
+  align-self: center;
+  justify-self: center;
+  position: relative;
+}
+.headerPrimary::after {
+  content: '';
+  width: 120%;
+  height: 250%;
+  position: absolute;
+  top: -50%;
+  left: 10%;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: inset -12px 5px 0 3px rgb(0, 201, 255);
+}
+.headingPrimary {
+  position: relative;
+  font-size: 4rem;
+}
+.breakLine {
+  display: block;
+}
+.u-red {
+  color: red;
+
+}
+.u-close-gap {
+  margin-left: -.8rem;
+}
+.u-cyan {
+  color: rgb(0, 201, 255);
+}
+
+.headerSecondary {
+  position: relative;
+  grid-area: secondary;
+  align-self: center;
+  justify-self: center;
+}
+.headingSecondary {
+  font-family: 'McLaren', cursive;
+  font-size: 4rem;
+}
+
+.mainImage {
+  text-align: center;
+  grid-area: hero;
+  justify-self: center;
+}
+.heroImage {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.inLine {
+  display: inline;
+}
+
+.heart {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    margin:0 auto;
+    top: 1rem;
+    right: 2rem;
+    background-color: pink;
+    transform: rotate(-45deg);
+}
+.heart::before {
+    content: "";
+    background-color: pink;
+    border-radius: 50%;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 40px;
+}
+.heart::after {
+    content: "";
+    background-color: pink;
+    border-radius: 50%;
+    height: 40px;
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 40px;
+}
+
+.heartSmall {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin:0 auto;
+    top: 3.5rem;
+    right: 7rem;
+    background-color: red;
+    transform: rotate(-45deg);
+    animation: heartMoveAnim2 4s linear infinite;
+}
+.heartSmall::before {
+    content: "";
+    background-color: red;
+    border-radius: 50%;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 20px;
+}
+.heartSmall::after {
+    content: "";
+    background-color: red;
+    border-radius: 50%;
+    height: 20px;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 20px;
+}
+
+.heartSmall_2 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin:0 auto;
+    top: 0;
+    right: -1rem;
+    background-color: red;
+    transform: rotate(-45deg);
+    animation: heartMoveAnim 4s linear infinite;
+
+}
+.heartSmall_2::before {
+    content: "";
+    background-color: red;
+    border-radius: 50%;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 20px;
+}
+.heartSmall_2::after {
+    content: "";
+    background-color: red;
+    border-radius: 50%;
+    height: 20px;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 20px;
+}
+
+@keyframes heartMoveAnim {
+  0% {
+    transform: rotate(-45deg) translateX(0) ;
+  }
+  25%{
+    transform: rotate(-45deg) translateX(-2rem)  translateY(2rem) scale(0.8);
+  }
+    50%{
+    transform: rotate(-45deg) translateX(-4rem)  translateY(3rem) scale(1);
+  }
+
+  75% {
+    transform: rotate(-45deg) translateX(-2rem)  translateY(2rem) scale(0.8);
+  }
+
+  100% {
+    transform: rotate(-45deg) translateX(0);
+  }
+}
+
+@keyframes heartMoveAnim2 {
+  0% {
+    transform: rotate(-45deg) translateY(0);
+  }
+  25%{
+    transform: rotate(-45deg) translateY(-2rem) translateX(2rem) scale(1.2);
+  }
+  50%{
+    transform: rotate(-45deg) translateY(-3rem) translateX(3rem) scale(0.8);
+  }
+  75% {
+    transform: rotate(-45deg) translateY(-2rem) translateX(2rem) scale(1.2);
+  }
+  100% {
+    transform: rotate(-45deg) translateY(0);
+  }
+}
